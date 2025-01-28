@@ -6,9 +6,7 @@ export const hacsStyleVariables = css`
     --hcv-color-warning: var(--hacs-warning-color, var(--warning-color));
     --hcv-color-update: var(--hacs-update-color, var(--info-color));
     --hcv-color-new: var(--hacs-new-color, var(--success-color));
-    --hcv-color-icon: var(--hacs--default-icon-color, var(--sidebar-icon-color));
-
-    --hcv-color-markdown-background: var(--markdown-code-background-color, #f6f8fa);
+    --hcv-color-icon: var(--hacs-default-icon-color, var(--primary-text-color));
 
     --hcv-text-color-primary: var(--primary-text-color);
     --hcv-text-color-on-background: var(--text-primary-color);
@@ -17,8 +15,5 @@ export const hacsStyleVariables = css`
 
     --mdc-dialog-heading-ink-color: var(--hcv-text-color-primary);
     --mdc-dialog-content-ink-color: var(--hcv-text-color-primary);
-
-    /*hacs-link*/
-    --hcv-text-decoration-link: var(--hacs-link-text-decoration, none);
   }
 `;

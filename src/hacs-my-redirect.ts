@@ -1,4 +1,5 @@
-import { html, LitElement, TemplateResult } from "lit";
+import type { TemplateResult } from "lit";
+import { html, LitElement, nothing } from "lit";
 import { customElement, property, state } from "lit/decorators";
 import { navigate } from "../homeassistant-frontend/src/common/navigate";
 import {
@@ -6,13 +7,13 @@ import {
   extractSearchParamsObject,
 } from "../homeassistant-frontend/src/common/url/search-params";
 import "../homeassistant-frontend/src/layouts/hass-error-screen";
-import {
+import type {
   ParamType,
   Redirect,
   Redirects,
 } from "../homeassistant-frontend/src/panels/my/ha-panel-my";
-import { HomeAssistant, Route } from "../homeassistant-frontend/src/types";
-import { Hacs } from "./data/hacs";
+import type { HomeAssistant, Route } from "../homeassistant-frontend/src/types";
+import type { Hacs } from "./data/hacs";
 
 export const REDIRECTS: Redirects = {
   hacs_repository: {
@@ -64,11 +65,11 @@ class HacsMyRedirect extends LitElement {
     navigate(url, { replace: true });
   }
 
-  protected render(): TemplateResult {
+  protected render() {
     if (this._error) {
       return html`<hass-error-screen .error=${this._error}></hass-error-screen>`;
     }
-    return html``;
+    return nothing;
   }
 
   private _createRedirectUrl(redirect: Redirect): string {
@@ -96,5 +97,11 @@ class HacsMyRedirect extends LitElement {
 
   private _checkParamType(type: ParamType, _value: string) {
     return type === "string" || type === "string?";
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "hacs-my-redirect": HacsMyRedirect;
   }
 }

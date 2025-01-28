@@ -1,0 +1,41 @@
+{
+	"name": "HACS Frontend",
+	"image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:18",
+	"remoteUser": "node",
+	"postCreateCommand": "make init",
+	"forwardPorts": [
+		5000
+	],
+	"portsAttributes": {
+		"5000": {
+			"label": "Frontend server port",
+			"onAutoForward": "ignore"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.vscode-pull-request-github",
+				"dbaeumer.vscode-eslint",
+				"ms-vscode.vscode-typescript-tslint-plugin",
+				"esbenp.prettier-vscode",
+				"bierner.lit-html",
+				"runem.lit-plugin"
+			],
+			"settings": {
+				"files.eol": "\n",
+				"editor.tabSize": 2,
+				"editor.formatOnPaste": false,
+				"editor.formatOnSave": true,
+				"editor.formatOnType": true,
+				"[typescript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[javascript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"files.trimTrailingWhitespace": true
+			}
+		}
+	}
+}

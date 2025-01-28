@@ -1,11 +1,13 @@
 node_modules
 package-lock.json
 build
-src/localize/generated.ts
+dist
+src/localize/languages/translationMetadata.json
+src/resources/polyfills
 !script/build
-hacs_frontend/*.js
-hacs_frontend/*.json
-hacs_frontend/*.js.gz
-!hacs_frontend/*.py
+hacs_frontend
 
 yarn-error.log
+.yarn/*
+!.yarn/releases
+!.yarn/releases/yarn-*.cjs
